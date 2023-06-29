@@ -27,10 +27,10 @@ const config: HardhatUserConfig = {
     hardhat: {
       allowUnlimitedContractSize: true,
     },
-    ropsten: {
-      url: process.env.ROPSTEN_URL || "",
-      accounts:
-        process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
+    mumbai: {
+      url: `https://rpc-mumbai.maticvigil.com`,
+            accounts: ["0xb06d1268c02c427ced9bd5aa8b538f963ab8a496a8eab1b8e608c39f3d5988e8"],
+            chainId: 80001,
     },
   },
   typechain: {
@@ -42,7 +42,7 @@ const config: HardhatUserConfig = {
     currency: "USD",
   },
   etherscan: {
-    apiKey: process.env.ETHERSCAN_API_KEY,
+    apiKey: "4RXRFBU8D2ZP7UYAVBUCD9M8VVCXUZ2VJC",
   },
   solidity: {
     compilers: [
