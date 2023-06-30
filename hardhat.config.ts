@@ -27,9 +27,15 @@ const config: HardhatUserConfig = {
     hardhat: {
       allowUnlimitedContractSize: true,
     },
+    ropsten: {
+      url: process.env.ROPSTEN_URL || "",
+      accounts:
+        process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
+    },
     mumbai: {
       url: `https://rpc-mumbai.maticvigil.com`,
-            accounts: ["0xb06d1268c02c427ced9bd5aa8b538f963ab8a496a8eab1b8e608c39f3d5988e8"],
+      accounts: 
+      process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
             chainId: 80001,
     },
   },
